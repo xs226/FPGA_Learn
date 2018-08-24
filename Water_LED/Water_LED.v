@@ -37,36 +37,6 @@ end
 endmodule
 
 
-always@(posedge clk or negedge rst_n)begin
-    if(rst_n==1'b0)begin
-        
-    end
-    else if() begin
-        
-    end
-end
-
-
-
-
-parameter TIME_S = 5_000_000 ;
-reg[23:0] cnt_s;
-wire add_cnt_s;
-wire end_cnt_s;
-
-always @(posedge clk or negedge rst_n)begin
-    if(!rst_n)begin
-        cnt_s <= 0;
-    end
-    else if(add_cnt_s) begin
-        if(end_cnt_s) cnt_s <= 0;
-        else cnt_s <= cnt_s + 1;
-    end
-end
-
-assign add_cnt_s = flag1 ;       
-assign end_cnt_s = add_cnt_s && cnt_s==TIME_S-1 ; 
-
 
 
 `timescale 1ns/1ns
@@ -107,3 +77,39 @@ module testbench_name();
     end
 
 endmodule
+
+always@(posedge clk or negedge rst_n)begin
+    if(rst_n==1'b0)begin
+        
+    end
+    else if() begin
+        
+    end
+end
+
+parameter TIME_S = 5_000_000 ;
+reg[23:0] cnt_s;
+wire add_cnt_s;
+wire end_cnt_s;
+
+always @(posedge clk or negedge rst_n)begin
+    if(!rst_n)begin
+        cnt_s <= 0;
+    end
+    else if(add_cnt_s) begin
+        if(end_cnt_s) cnt_s <= 0;
+        else cnt_s <= cnt_s + 1;
+    end
+end
+
+assign add_cnt_s = flag1 ;       
+assign end_cnt_s = add_cnt_s && cnt_s==TIME_S-1 ; 
+
+
+
+
+
+
+
+
+
