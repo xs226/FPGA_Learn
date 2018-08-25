@@ -1,0 +1,109 @@
+Restore Archived Project report for 500W1200W
+Wed Jan 10 09:12:33 2018
+Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Restore Archived Project Summary
+  3. Restore Archived Project Messages
+  4. Files Restored
+  5. Files Not Restored
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------+
+; Restore Archived Project Summary                                        ;
++---------------------------------+---------------------------------------+
+; Restore Archived Project Status ; Successful - Wed Jan 10 09:12:33 2018 ;
+; Revision Name                   ; 500W1200W                             ;
+; Top-level Entity Name           ; timing                                ;
+; Family                          ; Cyclone IV E                          ;
++---------------------------------+---------------------------------------+
+
+
++-----------------------------------+
+; Restore Archived Project Messages ;
++-----------------------------------+
+Info: Successfully restored 'C:/lxs/500W_DCON_20180109.qar' into the 'C:/lxs/500W_DCON_20180109_restored/' directory
+Info: Generated report '500W1200W.restore.rpt'
+Info (23030): Evaluation of Tcl script c:/altera/13.1/quartus/common/tcl/apps/qpm/qar.tcl was successful
+Info: Quartus II 64-Bit Shell was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 312 megabytes
+    Info: Processing ended: Wed Jan 10 09:12:33 2018
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+
++------------------------------------------------------+
+; Files Restored                                       ;
++------------------------------------------------------+
+; File Name                                            ;
++------------------------------------------------------+
+; 500W.sdc                                             ;
+; 500W1200W.qpf                                        ;
+; 500W1200W.qsf                                        ;
+; 500W1200W_PIN.tcl                                    ;
+; 500W1200W_assignment_defaults.qdf                    ;
+; address.v                                            ;
+; ang_kdaset_mult.qip                                  ;
+; ang_kdaset_mult.v                                    ;
+; ang_kdaset_mult_bb.v                                 ;
+; ang_spi_ctl.v                                        ;
+; ccs_sw_ctl.v                                         ;
+; db/500W1200W.cmp.hdb                                 ;
+; db/500W1200W.db_info                                 ;
+; incremental_db/compiled_partitions/500W1200W.db_info ;
+; ioppinteg_mult.qip                                   ;
+; ioppinteg_mult.v                                     ;
+; ioppinteg_mult_bb.v                                  ;
+; pll.ppf                                              ;
+; pll.qip                                              ;
+; pll.v                                                ;
+; pll_bb.v                                             ;
+; pwm_div.qip                                          ;
+; pwm_div.v                                            ;
+; pwm_div_bb.v                                         ;
+; pwm_mult.qip                                         ;
+; pwm_mult.v                                           ;
+; pwm_mult_bb.v                                        ;
+; ram.qip                                              ;
+; ram.v                                                ;
+; ram_bb.v                                             ;
+; spi.v                                                ;
+; spi_ctrl.v                                           ;
+; stp1.stp                                             ;
+; test_tlpw.stp                                        ;
+; timing.v                                             ;
+; wmt_detect.v                                         ;
++------------------------------------------------------+
+
+
++--------------------+
+; Files Not Restored ;
++--------------------+
+; File Name          ;
++--------------------+
+
+

@@ -1,0 +1,191 @@
+/***********************************************************************
+　　   ****************** name：water meter detect **************
+　　          ********** author：made by LKF **********
+　　   ****************** time：2016.11.21 **********************
+***********************************************************************
+		deal with water meter detect
+		->wmt_en:  water meter detect enable
+		->wmt_sig: water flow signal
+		->wmt_data:water meter data,period n us 
+		->wmt_err : duty 25%~75%,period in min to max field OK  
+**************************************************************************/
+`include "address.v"
+`define  WMT_COUNT_MAX			16'd20000	//period 20ms  - 50Hz
+`define  WMT_DETECT_NCYC		8'd20
+`define  WMT_ERRTHD_NUM			8'd4       //biger than judge
+
+module wmt_detect(
+		input		rstn_i,
+		input		clk_1us,						//1us
+		input		wmt_en,						
+		input    wmt_sig,
+		input[15:0]	pdn1us_max,	  			//period max limit
+		input[15:0] pdn1us_min,	
+		output[15:0] wmt_data,          //detect period count value (n us)
+		output	wmt_err
+		);
+
+reg wmt_sigr,wmt_sigrr;
+always @(posedge clk_1us or negedge rstn_i)
+	begin
+	if (~rstn_i)
+		begin
+		wmt_sigr  <= 1'b0;
+		wmt_sigrr <= 1'b0;
+		end
+	else
+		begin
+		wmt_sigr  <= wmt_sig;
+		wmt_sigrr <= wmt_sigr;
+		end
+	end
+	
+		
+reg[7:0] wmt_current_state,wmt_next_state;
+parameter WMT_IDLE 	= 8'b0000_0001,
+			 WMT_COUNTH	= 8'b0000_0010,
+			 WMT_COUNTL	= 8'b0000_0100,
+			 WMT_CYC_FINISHED = 8'b0000_1000;
+
+//wmt detect
+always @(posedge clk_1us or negedge rstn_i)
+	begin 
+	if (~rstn_i)
+		wmt_current_state <= WMT_IDLE;
+	else
+		wmt_current_state <= wmt_next_state;
+	end
+
+wire 	 wmt_cych_finished,wmt_cycl_finished;
+assign wmt_cych_finished = wmt_sigrr & (~wmt_sigr);   //wmt_sig negedge
+assign wmt_cycl_finished = ~wmt_sigrr & wmt_sigr;  	//wmt_sig posedge
+always @(rstn_i or wmt_en or wmt_current_state or wmt_next_state or wmt_sigrr or wmt_cych_finished or wmt_cycl_finished)
+	begin
+	if(~rstn_i | ~wmt_en)
+		wmt_next_state <= WMT_IDLE;
+	else
+		case(wmt_current_state)
+			WMT_IDLE 	: wmt_next_state = wmt_sigrr ? WMT_COUNTH : WMT_COUNTL;
+			WMT_COUNTH	: wmt_next_state = wmt_cych_finished ? WMT_COUNTL : WMT_COUNTH;
+			WMT_COUNTL	: wmt_next_state = wmt_cycl_finished ? WMT_CYC_FINISHED : WMT_COUNTL;
+			WMT_CYC_FINISHED : wmt_next_state = wmt_cych_finished ? WMT_COUNTL : WMT_COUNTH;
+			default : wmt_next_state = WMT_IDLE;
+		endcase
+	end
+
+reg[15:0] count_period,count_periodh;
+reg[15:0] period_reg,periodh_reg;
+reg wmt_cyc_flag;
+always @(posedge clk_1us or negedge rstn_i)
+	begin 
+	if (~rstn_i)
+		begin
+		period_reg	  <= 16'b0;
+		periodh_reg	  <= 16'b0;
+		count_period  <= 16'b0;
+		count_periodh <= 16'b0;
+		wmt_cyc_flag  <= 1'b0;
+		end
+	else
+		case(wmt_current_state)
+			WMT_IDLE :
+				begin
+				period_reg	  <= 16'b0;
+				periodh_reg	  <= 16'b0;
+				count_period  <= 16'b0;
+				count_periodh <= 16'b0;
+				wmt_cyc_flag  <= 1'b0;
+				end
+			WMT_COUNTH :
+				if(count_period < `WMT_COUNT_MAX)
+					begin
+					count_period  <= count_period + 1'b1;
+					count_periodh <= count_periodh + 1'b1;
+					wmt_cyc_flag  <= 1'b0;
+					end
+				else
+					begin
+					period_reg	  <= count_period;
+					periodh_reg	  <= count_periodh;
+					count_period  <= 16'b0;
+					count_periodh <= 16'b0;
+					wmt_cyc_flag  <= 1'b1;
+					end
+			WMT_COUNTL :
+				if(count_period < `WMT_COUNT_MAX)
+					begin
+					count_period  <= count_period + 1'b1;
+					wmt_cyc_flag  <= 1'b0;
+					end
+				else
+					begin
+					period_reg	  <= count_period;
+					periodh_reg	  <= count_periodh;
+					count_period  <= 16'b0;
+					count_periodh <= 16'b0;
+					wmt_cyc_flag  <= 1'b1;
+					end
+			WMT_CYC_FINISHED :
+				begin
+				period_reg	  <= count_period;
+				periodh_reg	  <= count_periodh;
+				count_period  <= 16'b1;
+				count_periodh <= 16'b1;
+				wmt_cyc_flag  <= 1'b1;
+				end
+			default: ;
+		endcase
+	end
+
+reg[7:0] count_cyc_num,count_err_num;
+reg wmt_err_flag;
+wire[15:0] wmt_duty_min,wmt_duty_max;
+assign wmt_duty_min = period_reg >> 4'd3;  //12.5%
+assign wmt_duty_max = (period_reg - wmt_duty_min); //87.5%
+
+always @(posedge clk_1us or negedge rstn_i)
+	begin 
+	if (~rstn_i)
+		begin
+		count_cyc_num <= 8'b0;
+		count_err_num <= 8'b0;
+		wmt_err_flag  <= 1'b0;
+		end
+	else if(~wmt_en)				
+		begin
+		count_cyc_num <= 8'b0;
+		count_err_num <= 8'b0;
+		wmt_err_flag  <= 1'b0;
+		end
+	else if(count_cyc_num < `WMT_DETECT_NCYC)
+		begin
+		if(wmt_cyc_flag)
+			begin
+			count_cyc_num  <= count_cyc_num  + 1'b1;
+			if(period_reg > pdn1us_max || period_reg < pdn1us_min)
+				count_err_num <= count_err_num + 1'b1;
+			else if(periodh_reg > wmt_duty_max || periodh_reg < wmt_duty_min)
+				count_err_num <= count_err_num + 1'b1;
+			end
+		if(count_err_num > `WMT_ERRTHD_NUM)
+			wmt_err_flag  <= 1'b1;
+		end
+	else
+		begin
+		count_cyc_num <= 8'b0;
+		count_err_num <= 8'b0;
+		if(count_err_num > `WMT_ERRTHD_NUM)
+			wmt_err_flag  <= 1'b1;
+		else 
+			wmt_err_flag  <= 1'b0;
+		end
+	end
+
+assign wmt_err = wmt_err_flag;
+assign wmt_data = period_reg;
+
+endmodule
+		
+				
+				
+					

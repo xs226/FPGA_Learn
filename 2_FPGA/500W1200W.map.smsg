@@ -1,0 +1,13 @@
+Warning (10273): Verilog HDL warning at timing.v(936): extended using "x" or "z"
+Warning (10273): Verilog HDL warning at timing.v(941): extended using "x" or "z"
+Warning (10268): Verilog HDL information at timing.v(1252): always construct contains both blocking and non-blocking assignments
+Warning (10268): Verilog HDL information at timing.v(1813): always construct contains both blocking and non-blocking assignments
+Info (10281): Verilog HDL Declaration information at timing.v(1226): object "ANG_DA_UPDATE" differs only in case from object "ang_da_update" in the same scope
+Info (10281): Verilog HDL Declaration information at spi_ctrl.v(110): object "SPI_DACSET_WR" differs only in case from object "spi_dacset_wr" in the same scope
+Info (10281): Verilog HDL Declaration information at spi_ctrl.v(111): object "SPI_DACOFFSET_WR" differs only in case from object "spi_dacoffset_wr" in the same scope
+Info (10281): Verilog HDL Declaration information at spi_ctrl.v(112): object "SPI_REG_WR" differs only in case from object "spi_reg_wr" in the same scope
+Info (10281): Verilog HDL Declaration information at spi_ctrl.v(113): object "SPI_REG_RD" differs only in case from object "spi_reg_rd" in the same scope
+Warning (10268): Verilog HDL information at ang_spi_ctl.v(201): always construct contains both blocking and non-blocking assignments
+Info (10281): Verilog HDL Declaration information at ang_spi_ctl.v(70): object "SPI_REG_WR" differs only in case from object "spi_reg_wr" in the same scope
+Info (10281): Verilog HDL Declaration information at ang_spi_ctl.v(71): object "SPI_REG_RD" differs only in case from object "spi_reg_rd" in the same scope
+Warning (10268): Verilog HDL information at wmt_detect.v(62): always construct contains both blocking and non-blocking assignments

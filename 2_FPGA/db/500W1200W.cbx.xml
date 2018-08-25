@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="500W1200W">
+		<CBX_INST_ENTRY INSTANCE_NAME="|timing|ram:ccs2_ram|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_n8s1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|timing|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram" CBX_FILE_NAME="altsyncram_a124.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|timing|pll:pll1|altpll:altpll_component" CBX_FILE_NAME="pll_altpll.v"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|timing|pwm_div:pwm_div1|lpm_divide:LPM_DIVIDE_component" CBX_FILE_NAME="lpm_divide_ups.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|timing|pwm_mult:pwm_mult1|lpm_mult:lpm_mult_component" CBX_FILE_NAME="mult_9en.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|timing|ram:ccs3_ram|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_n8s1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|timing|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|lpm_mux:mux" CBX_FILE_NAME="mux_rsc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|timing|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|LPM_COUNTER:\adv_point_3_and_more:advance_pointer_counter" CBX_FILE_NAME="cntr_lgi.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|timing|ram:ccs4_ram|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_n8s1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|timing|ram:oppbak_ram|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_n8s1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|timing|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|lpm_decode:wdecoder" CBX_FILE_NAME="decode_dvf.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|timing|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|LPM_COUNTER:status_read_pointer_counter" CBX_FILE_NAME="cntr_23j.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|timing|ang_kdaset_mult:ang_kdaset_mult_inst|lpm_mult:lpm_mult_component" CBX_FILE_NAME="mult_jfn.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|timing|ioppinteg_mult:ioppinteg_mult_inst|lpm_mult:lpm_mult_component" CBX_FILE_NAME="mult_sfn.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|timing|ram:ccs1_ram|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_n8s1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|timing|ram:ccs5_ram|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_n8s1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|timing|ram:oppinteg_ram|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_n8s1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|timing|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|LPM_COUNTER:read_pointer_counter" CBX_FILE_NAME="cntr_g9j.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|timing|ram:ccs6_ram|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_n8s1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|timing|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|LPM_COUNTER:status_advance_pointer_counter" CBX_FILE_NAME="cntr_egi.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

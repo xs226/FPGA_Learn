@@ -1,0 +1,5 @@
+v1
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,ang_kdaset_mult:ang_kdaset_mult_inst|lpm_mult:lpm_mult_component|mult_jfn:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,pwm_mult:pwm_mult1|lpm_mult:lpm_mult_component|mult_9en:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,ioppinteg_mult:ioppinteg_mult_inst|lpm_mult:lpm_mult_component|mult_sfn:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,pwm_mult:pwm_mult1|lpm_mult:lpm_mult_component|mult_9en:auto_generated|mac_out4,
