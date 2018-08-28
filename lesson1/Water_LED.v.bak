@@ -1,4 +1,4 @@
-module water_led (
+module water_led(
 	clk ;
 	rst_n ;
 	dout
@@ -39,8 +39,6 @@ end
 
 
 endmodule
-
-aa
 
 
 
