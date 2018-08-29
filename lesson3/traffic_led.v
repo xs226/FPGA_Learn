@@ -33,57 +33,43 @@ always @(posedge clk or negedge rst_n)begin
     end
 end
 
-
-reg[1:0] sum_2s,sum_3s,sum_4s;
+reg[1:0] ew_state;
+reg[3:0] ew_cnt;
 
 always@(posedge clk or negedge rst_n)begin
     if(rst_n==1'b0)begin
-        sum_2s<=0;
-		sum_3s<=0;
-		sum_4s<=0;
+        ew_state<=0;
+    end
+    else if( cnt_1s==TIME_1s-1 ) begin
+        if( ew_state==0 && ew_cnt==9 )  ew_state<=1;
+		else if( ew_state==1 && ew_cnt==4 ) ew_state<=2;
+		else if( ew_state==2 && ew_cnt==14) ew_state<=0;
+    end
+end
+
+always@(posedge clk or negedge rst_n)begin
+    if(rst_n==1'b0)begin
+        ew_cnt<=0;
     end
     else if(cnt_1s==TIME_1s-1) begin
-			if(sum_2s==1) sum_2s<=0;
-			else sum_2s<=sum_2s+1;
-			
-			if(sum_3s==2) sum_3s<=0;
-			else sum_3s<=sum_3s+1;
-			
-			if(sum_4s==3) sum_4s<=0;
-			else sum_4s<=sum_4s+1;
-		end
+        if( (ew_state==0 && ew_cnt==9) || (ew_state==1 && ew_cnt==4) || ( ew_state==2 && ew_cnt==14) )ew_cnt<=0;
+		else ew_cnt<=ew_cnt+1;
+    end
 end
+
+wire ew_change_flag;
+
+assign ew_change_flag=(	( ew_state==0 && ew_cnt==9 && cnt_1s==TIME_1s-1 )  ||
+						( ew_state==1 && ew_cnt==4 && cnt_1s==TIME_1s-1 )  ||
+						( ew_state==2 && ew_cnt==14 && cnt_1s==TIME_1s-1 )
+					);
 
 always@(posedge clk or negedge rst_n)begin
     if(rst_n==1'b0)begin
         led_east<=3'b110;
     end
-    else if(cnt_1s==TIME_1s-1) begin
+    else if(ew_change_flag) begin
         led_east<={led_east[1:0],led_east[2]};
-    end
-end
-always@(posedge clk or negedge rst_n)begin
-    if(rst_n==1'b0)begin
-        led_west<=3'b110;
-    end
-    else if(sum_2s==1 && cnt_1s==TIME_1s-1) begin
-        led_west<={led_west[1:0],led_west[2]};
-    end
-end
-always@(posedge clk or negedge rst_n)begin
-    if(rst_n==1'b0)begin
-        led_south<=3'b110;
-    end
-    else if(sum_3s==2 && cnt_1s==TIME_1s-1) begin
-        led_south<={led_south[1:0],led_south[2]};
-    end
-end
-always@(posedge clk or negedge rst_n)begin
-    if(rst_n==1'b0)begin
-        led_north<=3'b110;
-    end
-    else if(sum_4s==3 && cnt_1s==TIME_1s-1) begin
-        led_north<={led_north[1:0],led_north[2]};
     end
 end
 

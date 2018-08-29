@@ -1,22 +1,18 @@
 `timescale 1ns/1ns
-module traffic_led_tb();	
+module seg_led_tb();	
     reg clk;
     reg rst_n;	
-    wire[2:0] led_east;
-	wire[2:0] led_south;
-	wire[2:0] led_west;
-	wire[2:0] led_north;
+    wire[7:0] segment;
+	wire[7:0] segsel;
 	
     parameter CYCLE = 20;
 	parameter RST_TIME = 3;
 	
-    traffic_led #(1) uut(
+    seg_led #(.TIME_1s(2) ) uut(
          .clk( clk ),
          .rst_n( rst_n ),
-		 .led_east( led_east ),
-		 .led_west( led_west ),
-		 .led_south( led_south ),
-		 .led_north( led_north )
+		 .segment( segment ),
+		 .segsel( segsel )
     );
 
     initial begin
@@ -39,4 +35,4 @@ module traffic_led_tb();
 		
     end
 
-endmodule
+endmodulepsi  水压传感器

@@ -3,79 +3,60 @@ K3
 13
 cModel Technology
 Z0 dF:\FPGA_TQ\FPGA_Learn\modelsim
-vtraffic_led
-Z1 Ik1U4BHzBU]RLhhXLYdX7f1
-Z2 VY9V@1k@f51zbemRbBQKc]2
-Z3 dH:\FPGA_Learn\modelsim
-Z4 w1535459814
-Z5 8H:\FPGA_Learn\lesson2\traffic_led.v
-Z6 FH:\FPGA_Learn\lesson2\traffic_led.v
+vseg_led
+Z1 IV00C`]Uj:QJdz_W3nlWkT1
+Z2 VH=`o54k6ec0k^a6TU1ViW2
+Z3 dG:\FPGA_Learn\modelsim
+Z4 w1535530745
+Z5 8G:/FPGA_Learn/lesson6/seg_led.v
+Z6 FG:/FPGA_Learn/lesson6/seg_led.v
 L0 1
 Z7 OV;L;10.1d;51
 r1
 31
-Z8 !s90 -reportprogress|300|-work|work|H:\FPGA_Learn\lesson2\traffic_led.v|
+Z8 !s90 -reportprogress|300|-work|work|G:/FPGA_Learn/lesson6/seg_led.v|
 Z9 o-work work -O0
 !i10b 1
-Z10 !s100 jz7Gk^f>ikImB7BU]AAHX2
+Z10 !s100 Damij9<d79Dn`mZV]h;k@1
 !s85 0
-Z11 !s108 1535459821.487000
-Z12 !s107 H:\FPGA_Learn\lesson2\traffic_led.v|
+Z11 !s108 1535530749.117000
+Z12 !s107 G:/FPGA_Learn/lesson6/seg_led.v|
 !s101 -O0
-vtraffic_led_tb
+vseg_led_tb
 !i10b 1
-Z13 !s100 AIVVX;6Qe6oAzZ9ASLCgc1
-Z14 IXTXKO]NgE0E5MU=8>35ZR0
-Z15 VBn]oB;fgIdT4Fo4clk5W_1
+Z13 !s100 :BZi0:=6Ba^=Cha1RGjLV3
+Z14 IOfHa<d7m;QamV?bSi1C9@2
+Z15 VUc;Ybo6UHNAOEoBe2dkVJ3
 R3
-Z16 w1535457622
-Z17 8H:/FPGA_Learn/lesson2/traffic_led_tb.v
-Z18 FH:/FPGA_Learn/lesson2/traffic_led_tb.v
+Z16 w1535530358
+Z17 8G:/FPGA_Learn/lesson6/seg_led_tb.v
+Z18 FG:/FPGA_Learn/lesson6/seg_led_tb.v
 L0 2
 R7
 r1
 !s85 0
 31
-!s108 1535459821.773000
-!s107 H:/FPGA_Learn/lesson2/traffic_led_tb.v|
-Z19 !s90 -reportprogress|300|-work|work|H:/FPGA_Learn/lesson2/traffic_led_tb.v|
+!s108 1535530749.337000
+!s107 G:/FPGA_Learn/lesson6/seg_led_tb.v|
+Z19 !s90 -reportprogress|300|-work|work|G:/FPGA_Learn/lesson6/seg_led_tb.v|
 !s101 -O0
 R9
-vwater_led
-Z20 !s100 lXfnHkbVjRm]^HPIikiXz2
-Z21 IGVNkRFH7gZhVB;280UTV=3
-Z22 V7i_THN9a3KLbHT<U]<Oe91
-Z23 dG:\FPGA_Learn\modelsim
-Z24 w1535435251
-Z25 8G:/FPGA_Learn/Water_LED/Water_LED.v
-Z26 FG:/FPGA_Learn/Water_LED/Water_LED.v
-L0 1
-R7
-r1
-31
-Z27 !s90 -reportprogress|300|-work|work|G:/FPGA_Learn/Water_LED/Water_LED.v|
-R9
-Z28 !s108 1535436962.289000
-Z29 !s107 G:/FPGA_Learn/Water_LED/Water_LED.v|
-!i10b 1
-!s85 0
-!s101 -O0
-vwater_led_tb
-Z30 I<aj<GR]5lT9V2RL:8;LjM1
-Z31 VfZWZbm7oCM^Qi=ib^=Seg3
-R23
-Z32 w1535436949
-Z33 8G:/FPGA_Learn/Water_LED/water_led_tb.v
-Z34 FG:/FPGA_Learn/Water_LED/water_led_tb.v
+vtraffic_led_tb
+Z20 !s100 `f_GJll<B2eca6LQZM^Zn3
+Z21 IYY5c<;CAb1?BSTHTRh6193
+Z22 VBn]oB;fgIdT4Fo4clk5W_1
+R3
+Z23 w1535512889
+Z24 8G:/FPGA_Learn/lesson4/seg_led_tb.v
+Z25 FG:/FPGA_Learn/lesson4/seg_led_tb.v
 L0 2
 R7
 r1
 31
-Z35 !s90 -reportprogress|300|-work|work|G:/FPGA_Learn/Water_LED/water_led_tb.v|
+Z26 !s90 -reportprogress|300|-work|work|G:/FPGA_Learn/lesson4/seg_led_tb.v|
 R9
-Z36 !s100 S_>:_9oU@iWc7feL5=TgL3
-Z37 !s108 1535436962.503000
-Z38 !s107 G:/FPGA_Learn/Water_LED/water_led_tb.v|
+Z27 !s108 1535513119.406000
+Z28 !s107 G:/FPGA_Learn/lesson4/seg_led_tb.v|
 !i10b 1
 !s85 0
 !s101 -O0

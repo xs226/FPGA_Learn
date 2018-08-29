@@ -1,8 +1,8 @@
-H:/FPGA_Learn/lesson2/traffic_led_tb.v {1 {vlog -work work H:/FPGA_Learn/lesson2/traffic_led_tb.v
+G:/FPGA_Learn/lesson6/seg_led.v {1 {vlog -work work G:/FPGA_Learn/lesson6/seg_led.v
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
--- Compiling module traffic_led_tb
+-- Compiling module seg_led
 
 Top level modules:
-	traffic_led_tb
+	seg_led
 
 } {} {}}

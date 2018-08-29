@@ -1,6 +1,6 @@
 library verilog;
 use verilog.vl_types.all;
-entity water_led_tb is
+entity seg_led_tb is
     generic(
         CYCLE           : integer := 20;
         RST_TIME        : integer := 3
@@ -8,4 +8,4 @@ entity water_led_tb is
     attribute mti_svvh_generic_type : integer;
     attribute mti_svvh_generic_type of CYCLE : constant is 1;
     attribute mti_svvh_generic_type of RST_TIME : constant is 1;
-end water_led_tb;
+end seg_led_tb;
