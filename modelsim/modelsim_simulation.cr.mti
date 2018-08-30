@@ -1,8 +1,8 @@
-G:/FPGA_Learn/lesson6/seg_led.v {1 {vlog -work work G:/FPGA_Learn/lesson6/seg_led.v
+G:/FPGA_Learn/lesson6/seg_led_tb.v {1 {vlog -work work G:/FPGA_Learn/lesson6/seg_led_tb.v
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
--- Compiling module seg_led
+-- Compiling module seg_led_tb
 
 Top level modules:
-	seg_led
+	seg_led_tb
 
 } {} {}}

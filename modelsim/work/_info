@@ -4,59 +4,59 @@ K3
 cModel Technology
 Z0 dF:\FPGA_TQ\FPGA_Learn\modelsim
 vseg_led
-Z1 IV00C`]Uj:QJdz_W3nlWkT1
-Z2 VH=`o54k6ec0k^a6TU1ViW2
-Z3 dG:\FPGA_Learn\modelsim
-Z4 w1535530745
-Z5 8G:/FPGA_Learn/lesson6/seg_led.v
-Z6 FG:/FPGA_Learn/lesson6/seg_led.v
+!i10b 1
+!s100 WMMD6zlG8T?YR?KA0jaJm3
+IM;e0j4Zz0fUCzgS[J_fUG2
+Z1 VH=`o54k6ec0k^a6TU1ViW2
+Z2 dG:\FPGA_Learn\modelsim
+w1535605593
+Z3 8G:/FPGA_Learn/lesson6/seg_led_new.v
+Z4 FG:/FPGA_Learn/lesson6/seg_led_new.v
 L0 1
-Z7 OV;L;10.1d;51
+Z5 OV;L;10.1d;51
 r1
-31
-Z8 !s90 -reportprogress|300|-work|work|G:/FPGA_Learn/lesson6/seg_led.v|
-Z9 o-work work -O0
-!i10b 1
-Z10 !s100 Damij9<d79Dn`mZV]h;k@1
 !s85 0
-Z11 !s108 1535530749.117000
-Z12 !s107 G:/FPGA_Learn/lesson6/seg_led.v|
+31
+!s108 1535605600.362000
+!s107 G:/FPGA_Learn/lesson6/seg_led_new.v|
+Z6 !s90 -reportprogress|300|-work|work|G:/FPGA_Learn/lesson6/seg_led_new.v|
 !s101 -O0
+Z7 o-work work -O0
 vseg_led_tb
+Z8 !s100 :BZi0:=6Ba^=Cha1RGjLV3
+Z9 IOfHa<d7m;QamV?bSi1C9@2
+Z10 VUc;Ybo6UHNAOEoBe2dkVJ3
+R2
+Z11 w1535600392
+Z12 8G:/FPGA_Learn/lesson6/seg_led_tb.v
+Z13 FG:/FPGA_Learn/lesson6/seg_led_tb.v
+L0 2
+R5
+r1
+31
+Z14 !s90 -reportprogress|300|-work|work|G:/FPGA_Learn/lesson6/seg_led_tb.v|
+R7
 !i10b 1
-Z13 !s100 :BZi0:=6Ba^=Cha1RGjLV3
-Z14 IOfHa<d7m;QamV?bSi1C9@2
-Z15 VUc;Ybo6UHNAOEoBe2dkVJ3
-R3
-Z16 w1535530358
-Z17 8G:/FPGA_Learn/lesson6/seg_led_tb.v
-Z18 FG:/FPGA_Learn/lesson6/seg_led_tb.v
-L0 2
-R7
-r1
 !s85 0
-31
-!s108 1535530749.337000
-!s107 G:/FPGA_Learn/lesson6/seg_led_tb.v|
-Z19 !s90 -reportprogress|300|-work|work|G:/FPGA_Learn/lesson6/seg_led_tb.v|
+Z15 !s108 1535605600.174000
+Z16 !s107 G:/FPGA_Learn/lesson6/seg_led_tb.v|
 !s101 -O0
-R9
 vtraffic_led_tb
-Z20 !s100 `f_GJll<B2eca6LQZM^Zn3
-Z21 IYY5c<;CAb1?BSTHTRh6193
-Z22 VBn]oB;fgIdT4Fo4clk5W_1
-R3
-Z23 w1535512889
-Z24 8G:/FPGA_Learn/lesson4/seg_led_tb.v
-Z25 FG:/FPGA_Learn/lesson4/seg_led_tb.v
+Z17 !s100 `f_GJll<B2eca6LQZM^Zn3
+Z18 IYY5c<;CAb1?BSTHTRh6193
+Z19 VBn]oB;fgIdT4Fo4clk5W_1
+R2
+Z20 w1535512889
+Z21 8G:/FPGA_Learn/lesson4/seg_led_tb.v
+Z22 FG:/FPGA_Learn/lesson4/seg_led_tb.v
 L0 2
-R7
+R5
 r1
 31
-Z26 !s90 -reportprogress|300|-work|work|G:/FPGA_Learn/lesson4/seg_led_tb.v|
-R9
-Z27 !s108 1535513119.406000
-Z28 !s107 G:/FPGA_Learn/lesson4/seg_led_tb.v|
+Z23 !s90 -reportprogress|300|-work|work|G:/FPGA_Learn/lesson4/seg_led_tb.v|
+R7
+Z24 !s108 1535513119.406000
+Z25 !s107 G:/FPGA_Learn/lesson4/seg_led_tb.v|
 !i10b 1
 !s85 0
 !s101 -O0
