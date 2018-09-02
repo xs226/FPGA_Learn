@@ -47,6 +47,8 @@ module seg_led_tb();
 		key=0;
 		#(30*CYCLE);
 		key=1;
+		
+		$stop;
     end
 
 endmodule
