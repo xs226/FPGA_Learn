@@ -1,0 +1,15 @@
+H:/FPGA_Learn/fsm/lesson3/fsm.v {1 {vlog -work work H:/FPGA_Learn/fsm/lesson3/fsm.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module fsm
+
+Top level modules:
+	fsm
+
+} {} {}} H:/FPGA_Learn/fsm/lesson3/fsm_tb.v {1 {vlog -work work H:/FPGA_Learn/fsm/lesson3/fsm_tb.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module fsm_tb
+
+Top level modules:
+	fsm_tb
+
+} {} {}}
