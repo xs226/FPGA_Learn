@@ -25,17 +25,29 @@ parameter  IDLE    =  4'd0,
 reg[3:0] current_state;
 reg[3:0] next_state;
 
+reg en_r;
+wire en_pos_edge;
+
+always@(posedge clk or negedge rst_n)begin
+    if(rst_n==1'b0)begin
+        en_r<=0;
+    end
+    else  begin
+        en_r<=en;
+    end
+end
+assign en_pos_edge=~en_r&en;
 
 always @(posedge clk or negedge rst_n)begin
     if(!rst_n)begin
         cnt_1s <= 0;
     end
     else begin
-		if( current_state==S1 && en==1 )begin
+		if( current_state==S1 && en_pos_edge==1 )begin
 			if(cnt_1s==4) cnt_1s <= 0;
 			else cnt_1s <= cnt_1s + 1;
 		end
-		else if(current_state==S2 && en==1) begin
+		else if(current_state==S2 && en_pos_edge==1) begin
 			if(cnt_1s==6) cnt_1s <= 0;
 			else cnt_1s <= cnt_1s + 1;
 		end
@@ -57,9 +69,9 @@ always@(*)begin
     case(current_state)
 		IDLE:if(en==1) next_state=S1 ;
 			else next_state=current_state ;
-		S1: if(cnt_1s==4 && en==1) next_state=S2 ;
+		S1: if(cnt_1s==4 && en_pos_edge==1) next_state=S2 ;
 			else next_state=current_state ;
-		S2: if(cnt_1s==6 && en==1) next_state=IDLE ;
+		S2: if(cnt_1s==6 && en_pos_edge==1) next_state=IDLE ;
 			else next_state=current_state ;
 	    default:next_state=IDLE;
 endcase

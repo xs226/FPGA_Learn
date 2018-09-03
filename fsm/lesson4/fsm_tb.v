@@ -28,26 +28,19 @@ module fsm_tb ();
 		rst_n=1;
     end
 
+	integer i;
+	
 	initial begin
         #1;		
 		en=0;
-        #(10*CYCLE);
-		en=1;
-		#(3*CYCLE);
-		en=0;
 		
-		#(3*CYCLE);
-		en=1;
-		#(2*CYCLE);
-		en=0;
-		#(3*CYCLE);
-		en=1;
-		#(3*CYCLE);
-		en=0;
-		#(3*CYCLE);
-		en=1;
-		#(3*CYCLE);
-		en=0;
+		for(i=0;i<100;i=i+1)begin
+			#(2*CYCLE);
+			en=1;
+			#(3*CYCLE);
+			en=0;
+		end
+		       
 		
     end
 
