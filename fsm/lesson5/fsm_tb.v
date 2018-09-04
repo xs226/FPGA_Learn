@@ -2,8 +2,8 @@
 module fsm_tb ();	
     reg clk ;
     reg rst_n ;	
-    reg en ;
-    wire[ 3 :0] dout ;
+    reg[7:0] din ;
+    wire[ 7 :0] dout ;
 	
     parameter CYCLE = 20 ;
 	parameter RST_TIME = 3 ;
@@ -14,6 +14,16 @@ module fsm_tb ();
 	.en ( en ),
 	.dout ( dout )
 	);
+
+	module fsm (
+	clk ,
+	rst_n ,
+	din ,
+	dout ,
+	dout_sop ,
+	dout_eop ,
+	dout_vld
+);
 
     initial begin
         clk = 0;
