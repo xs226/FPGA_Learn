@@ -1,15 +1,15 @@
-G:/FPGA_Learn/fsm/lesson4/fsm.v {1 {vlog -work work G:/FPGA_Learn/fsm/lesson4/fsm.v
-Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
--- Compiling module fsm
-
-Top level modules:
-	fsm
-
-} {} {}} G:/FPGA_Learn/fsm/lesson4/fsm_tb.v {1 {vlog -work work G:/FPGA_Learn/fsm/lesson4/fsm_tb.v
+G:/FPGA_Learn/fsm/lesson5/fsm_tb.v {1 {vlog -work work G:/FPGA_Learn/fsm/lesson5/fsm_tb.v
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 -- Compiling module fsm_tb
 
 Top level modules:
 	fsm_tb
+
+} {} {}} G:/FPGA_Learn/fsm/lesson5/pkt_check.v {1 {vlog -work work G:/FPGA_Learn/fsm/lesson5/pkt_check.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module pkt_check
+
+Top level modules:
+	pkt_check
 
 } {} {}}

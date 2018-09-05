@@ -4,116 +4,135 @@ K3
 cModel Technology
 Z0 dF:\FPGA_TQ\FPGA_Learn\modelsim
 vfsm
-Z1 !s100 >@Xjf3X7OiaGe>ez5ziBY1
-Z2 IYalMGOKYleZmD7ce2Cf:l2
-Z3 Vd4ZGb^M>IoN1lPdC6:TLj1
-Z4 dG:\FPGA_Learn\modelsim
-Z5 w1535944581
-Z6 8G:/FPGA_Learn/fsm/lesson4/fsm.v
-Z7 FG:/FPGA_Learn/fsm/lesson4/fsm.v
+Z1 Ihk:?53ZE1bk3cSGZWZ1=m0
+Z2 V3bK:COj_M39GnJ?0Eh1`z0
+Z3 dG:\FPGA_Learn\modelsim
+Z4 w1536138119
+Z5 8G:/FPGA_Learn/fsm/lesson5/fsm.v
+Z6 FG:/FPGA_Learn/fsm/lesson5/fsm.v
 L0 1
-Z8 OV;L;10.1d;51
+Z7 OV;L;10.1d;51
 r1
 31
-Z9 !s90 -reportprogress|300|-work|work|G:/FPGA_Learn/fsm/lesson4/fsm.v|
-Z10 o-work work -O0
+Z8 !s90 -reportprogress|300|-work|work|G:/FPGA_Learn/fsm/lesson5/fsm.v|
+Z9 o-work work -O0
+Z10 !s100 geQl]Kn5;A5do?Kz9mSbM3
+Z11 !s108 1536138123.303000
+Z12 !s107 G:/FPGA_Learn/fsm/lesson5/fsm.v|
 !i10b 1
 !s85 0
-Z11 !s108 1535952706.151000
-Z12 !s107 G:/FPGA_Learn/fsm/lesson4/fsm.v|
 !s101 -O0
 vfsm_tb
-!i10b 1
-!s100 L6Hg:fmOBR8DjZHHN0lGZ3
-I0NI2XT6BHcEKXJS^zLN@f1
-Z13 V[<j5d9CWFW=:dN1;^DJ@`3
-R4
-w1535952704
-Z14 8G:/FPGA_Learn/fsm/lesson4/fsm_tb.v
-Z15 FG:/FPGA_Learn/fsm/lesson4/fsm_tb.v
+Z13 !s100 D_[@ad]Dgde3;Oej9AXno2
+Z14 I`MYjime978_eBB[1c:cSK2
+Z15 V[<j5d9CWFW=:dN1;^DJ@`3
+R3
+Z16 w1536137436
+Z17 8G:/FPGA_Learn/fsm/lesson5/fsm_tb.v
+Z18 FG:/FPGA_Learn/fsm/lesson5/fsm_tb.v
 L0 2
-R8
+R7
+r1
+31
+Z19 !s90 -reportprogress|300|-work|work|G:/FPGA_Learn/fsm/lesson5/fsm_tb.v|
+R9
+!i10b 1
+!s85 0
+Z20 !s108 1536138123.522000
+Z21 !s107 G:/FPGA_Learn/fsm/lesson5/fsm_tb.v|
+!s101 -O0
+vpkt_check
+!i10b 1
+Z22 !s100 UW_giUS?]aAO7E]haoYhJ2
+Z23 I7RC_dA37SOh3jH>llbEal3
+Z24 V;bg<zPhn87E1^;H6BYbi=2
+R3
+Z25 w1535093241
+Z26 8G:/FPGA_Learn/fsm/lesson5/pkt_check.v
+Z27 FG:/FPGA_Learn/fsm/lesson5/pkt_check.v
+Z28 L0 262
+R7
 r1
 !s85 0
 31
-!s108 1535952706.338000
-!s107 G:/FPGA_Learn/fsm/lesson4/fsm_tb.v|
-Z16 !s90 -reportprogress|300|-work|work|G:/FPGA_Learn/fsm/lesson4/fsm_tb.v|
+!s108 1536138123.754000
+!s107 G:/FPGA_Learn/fsm/lesson5/pkt_check.v|
+Z29 !s90 -reportprogress|300|-work|work|G:/FPGA_Learn/fsm/lesson5/pkt_check.v|
 !s101 -O0
-R10
+R9
 vseg_led
-Z17 !s100 TaMZRC3g]flPNK>DefI502
-Z18 IiiXG1]@jR8FckmeFUAP9`2
-Z19 VO?U20TQlL6_TEYgVQN42j1
-Z20 dH:\FPGA_Learn\modelsim
-Z21 w1535713406
-Z22 8H:/FPGA_Learn/lesson7/timer.v
-Z23 FH:/FPGA_Learn/lesson7/timer.v
+Z30 !s100 TaMZRC3g]flPNK>DefI502
+Z31 IiiXG1]@jR8FckmeFUAP9`2
+Z32 VO?U20TQlL6_TEYgVQN42j1
+Z33 dH:\FPGA_Learn\modelsim
+Z34 w1535713406
+Z35 8H:/FPGA_Learn/lesson7/timer.v
+Z36 FH:/FPGA_Learn/lesson7/timer.v
 L0 1
-R8
+R7
 r1
 31
-Z24 !s90 -reportprogress|300|-work|work|H:/FPGA_Learn/lesson7/timer.v|
-R10
-Z25 !s108 1535767790.167000
-Z26 !s107 H:/FPGA_Learn/lesson7/timer.v|
+Z37 !s90 -reportprogress|300|-work|work|H:/FPGA_Learn/lesson7/timer.v|
+R9
+Z38 !s108 1535767790.167000
+Z39 !s107 H:/FPGA_Learn/lesson7/timer.v|
 !i10b 1
 !s85 0
 !s101 -O0
 vseg_led_tb
-Z27 Immd;nn9m[ziJVA=eG^IDa0
-Z28 VUc;Ybo6UHNAOEoBe2dkVJ3
-R20
-Z29 w1535767786
-Z30 8H:\FPGA_Learn\lesson7\timer_tb.v
-Z31 FH:\FPGA_Learn\lesson7\timer_tb.v
+Z40 Immd;nn9m[ziJVA=eG^IDa0
+Z41 VUc;Ybo6UHNAOEoBe2dkVJ3
+R33
+Z42 w1535767786
+Z43 8H:\FPGA_Learn\lesson7\timer_tb.v
+Z44 FH:\FPGA_Learn\lesson7\timer_tb.v
 L0 2
-R8
+R7
 r1
 31
-R10
-Z32 !s100 8Nz@JQ[ef><i9gd_A]@PO0
-Z33 !s108 1535767790.394000
-Z34 !s107 H:\FPGA_Learn\lesson7\timer_tb.v|
-Z35 !s90 -reportprogress|300|-work|work|H:\FPGA_Learn\lesson7\timer_tb.v|
+R9
+Z45 !s100 8Nz@JQ[ef><i9gd_A]@PO0
+Z46 !s108 1535767790.394000
+Z47 !s107 H:\FPGA_Learn\lesson7\timer_tb.v|
+Z48 !s90 -reportprogress|300|-work|work|H:\FPGA_Learn\lesson7\timer_tb.v|
 !i10b 1
 !s85 0
 !s101 -O0
 vtestbench_tb
-Z36 !s100 `kC6]9CWmB=U?4nH_nL0?1
-Z37 Iz=51XTG4[;<?QDgiOKZid1
-Z38 VO?A^REM6<e1OYnP;XBgVf0
-R20
-Z39 w1535853931
-Z40 8H:/FPGA_Learn/fsm/lesson1/fsm_tb.v
-Z41 FH:/FPGA_Learn/fsm/lesson1/fsm_tb.v
+Z49 !s100 `kC6]9CWmB=U?4nH_nL0?1
+Z50 Iz=51XTG4[;<?QDgiOKZid1
+Z51 VO?A^REM6<e1OYnP;XBgVf0
+R33
+Z52 w1535853931
+Z53 8H:/FPGA_Learn/fsm/lesson1/fsm_tb.v
+Z54 FH:/FPGA_Learn/fsm/lesson1/fsm_tb.v
 L0 2
-R8
+R7
 r1
 31
-Z42 !s90 -reportprogress|300|-work|work|H:/FPGA_Learn/fsm/lesson1/fsm_tb.v|
-R10
-Z43 !s108 1535854036.797000
-Z44 !s107 H:/FPGA_Learn/fsm/lesson1/fsm_tb.v|
+Z55 !s90 -reportprogress|300|-work|work|H:/FPGA_Learn/fsm/lesson1/fsm_tb.v|
+R9
+Z56 !s108 1535854036.797000
+Z57 !s107 H:/FPGA_Learn/fsm/lesson1/fsm_tb.v|
 !i10b 1
 !s85 0
 !s101 -O0
 vtraffic_led_tb
-Z45 !s100 `f_GJll<B2eca6LQZM^Zn3
-Z46 IYY5c<;CAb1?BSTHTRh6193
-Z47 VBn]oB;fgIdT4Fo4clk5W_1
-R4
-Z48 w1535512889
-Z49 8G:/FPGA_Learn/lesson4/seg_led_tb.v
-Z50 FG:/FPGA_Learn/lesson4/seg_led_tb.v
+Z58 !s100 `f_GJll<B2eca6LQZM^Zn3
+Z59 IYY5c<;CAb1?BSTHTRh6193
+Z60 VBn]oB;fgIdT4Fo4clk5W_1
+R3
+Z61 w1535512889
+Z62 8G:/FPGA_Learn/lesson4/seg_led_tb.v
+Z63 FG:/FPGA_Learn/lesson4/seg_led_tb.v
 L0 2
-R8
+R7
 r1
 31
-Z51 !s90 -reportprogress|300|-work|work|G:/FPGA_Learn/lesson4/seg_led_tb.v|
-R10
-Z52 !s108 1535513119.406000
-Z53 !s107 G:/FPGA_Learn/lesson4/seg_led_tb.v|
+Z64 !s90 -reportprogress|300|-work|work|G:/FPGA_Learn/lesson4/seg_led_tb.v|
+R9
+Z65 !s108 1535513119.406000
+Z66 !s107 G:/FPGA_Learn/lesson4/seg_led_tb.v|
 !i10b 1
 !s85 0
 !s101 -O0

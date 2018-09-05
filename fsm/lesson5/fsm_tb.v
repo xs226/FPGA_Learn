@@ -3,28 +3,55 @@ module fsm_tb ();
     reg clk ;
     reg rst_n ;	
     reg[7:0] din ;
-    wire[ 7 :0] dout ;
+    wire[7:0] dout[1:0] ;
+	wire dout_sop[1:0] ;
+	wire dout_eop[1:0] ;
+	wire dout_vld[1:0] ;
+	
+	reg[3:0] com_flag;
 	
     parameter CYCLE = 20 ;
 	parameter RST_TIME = 3 ;
 	
-    fsm  uut(
+    fsm  uut1(
 	.rst_n( rst_n ),
 	.clk  ( clk ),
-	.en ( en ),
-	.dout ( dout )
+	.din ( din ),
+	.dout ( dout[0] ),
+	.dout_sop(dout_sop[0]),
+	.dout_eop(dout_eop[0]),
+	.dout_vld(dout_vld[0])
+	
 	);
 
-	module fsm (
-	clk ,
-	rst_n ,
-	din ,
-	dout ,
-	dout_sop ,
-	dout_eop ,
-	dout_vld
-);
+	pkt_check   uut2(
+					  .clk      (clk),
+					  .rst_n    (rst_n),
+					  .din      (din  ),
+					  .dout_vld (dout_vld[1]),
+					  .dout     (dout[1]    ),
+					  .dout_sop (dout_sop[1]    ),
+					  .dout_eop (dout_eop[1]    )
+	);	
 
+	always@(posedge clk or negedge rst_n)begin
+	    if(rst_n==1'b0)begin
+	        com_flag<=0;
+	    end
+	    else  begin
+			if(dout[0]==dout[1])	com_flag[0]<=0;
+			else com_flag[0]<=1;			
+			if(dout_sop[0]==dout_sop[1])	com_flag[1]<=0;
+			else com_flag[1]<=1;
+			if(dout_eop[0]==dout_eop[1])	com_flag[2]<=0;
+			else com_flag[2]<=1;
+			if(dout_vld[0]==dout_vld[1])	com_flag[3]<=0;
+			else com_flag[3]<=1;
+			
+		end
+	end
+	
+	
     initial begin
         clk = 0;
         forever #(CYCLE/2) clk = ~clk;
@@ -38,22 +65,65 @@ module fsm_tb ();
 		rst_n=1;
     end
 
-	integer i;
+	integer i,j;
+
+
+
 	
 	initial begin
         #1;		
-		en=0;
+		din=8'h55;
+		#(5*CYCLE);
+		din=8'hd5;
+		#(1*CYCLE);
+		din=8'h55;
+		#(1*CYCLE);
+		din=8'h55;
+		#(1*CYCLE);
 		
-		for(i=0;i<100;i=i+1)begin
-			#(2*CYCLE);
-			en=1;
-			#(3*CYCLE);
-			en=0;
+		
+		for(j=0;j<2;j=j+1) begin		
+			start_frame;			
+			din=  0; 
+			#(1*CYCLE);
+			for(i=0;i<68;i=i+1)begin
+				din= {$random}%10;
+				#(1*CYCLE);
+			end
 		end
-		       
+		
+		
+			start_frame;
+			
+			din=  1; 
+			#(1*CYCLE);
+			din=0;
+			#(1*CYCLE);
+			din=1;
+			#(1*CYCLE);
+			for(i=0;i<5;i=i+1)begin
+				din= {$random}%10;
+				#(1*CYCLE);
+			end
+		
+		start_frame;
+		start_frame;
+		start_frame;
 		
     end
 
+task start_frame ;
+	integer i;
+	for(i=0;i< 5 ;i=i+1)begin		
+	din= 8'h55;
+	#(1*CYCLE);
+	din= 8'hd5;
+	#(1*CYCLE);
+	end
+endtask
+
+
+	
 endmodule
 
 
