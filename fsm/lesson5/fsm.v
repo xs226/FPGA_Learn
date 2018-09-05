@@ -21,13 +21,11 @@ reg dout_sop;
 reg dout_eop;
 reg dout_vld;
 
-parameter  IDLE    		=  4'd0,
-		   HEAD  		=  4'd1,
-		   TYPE_DATA  	=  4'd2,
-		   TYPE_CMD  	=  4'd3,
-		   DATA_LEN  	=  4'd4,
-		   DATA  		=  4'd5,
-		   DATA_CRC  	=  4'd6;
+parameter  HEAD  	=  4'd0,
+		   TYPE  	=  4'd1,
+		   LEN  	=  4'd2,
+		   DATA  	=  4'd3,
+		   FCS  	=  4'd4;
 		   
 reg[3:0] current_state;
 reg[3:0] next_state;
@@ -56,11 +54,7 @@ always@(posedge clk or negedge rst_n)begin
     end
 	else cnt_head<=0;
 end
-/************************* pkt_type *****************************/
-reg[7:0] pkt_type;
-always@(*)begin
-    pkt_type<=current_state==HEAD?din:0;
-end
+
 /************************* rec_len_cnt *****************************/
 reg[2:0] rec_len_cnt ;
 reg[15:0] data_len;
@@ -109,11 +103,19 @@ always @(posedge clk or negedge rst_n)begin
 	
 end
 
+
+
+
+
+
+
+
+
 /************************* fsm *****************************/
 
 always@(posedge clk or negedge rst_n)begin
     if(rst_n==1'b0)begin
-        current_state<=IDLE;
+        current_state<=HEAD;
     end
     else begin
         current_state<=next_state;
@@ -122,22 +124,25 @@ end
 
 always@(*)begin
     case(current_state)
-		IDLE:if( cnt_head==9 && din==8'hd5 ) next_state=HEAD ;
+		HEAD:if( cnt_head==9 && din==8'hd5 ) next_state=TYPE;
 			 else next_state=current_state ;		
-		HEAD: if(pkt_type==0) next_state=TYPE_CMD ;
-			  else next_state=TYPE_DATA ;
-		TYPE_DATA: if( rec_len_cnt==1 ) next_state=DATA_LEN ;
+		TYPE: if(din==0) next_state=DATA ;
+			  else next_state=LEN ;
+		LEN: if( cnt_data==CNT_THD-1 ) next_state=DATA ;
 			    else next_state=current_state;
-		TYPE_CMD: if( cnt_data==63) next_state=DATA ;
+		DATA: if( cnt_data==CNT_THD-1 ) next_state=FCS ;
 				else next_state=current_state;
-		DATA_LEN: if( cnt_data==data_len-1) next_state=DATA ;
+		FCS: if( cnt_data==CNT_THD-1 ) next_state=HEAD;
 				else next_state=current_state;
-		DATA: if( cnt_data==2 ) next_state=DATA_CRC ;
-				else next_state=current_state ;
-		DATA_CRC: next_state=IDLE ;
-	    default:next_state=IDLE;
+	    default:next_state=HEAD;
 	endcase
 end
+
+
+
+
+
+
 
 always@(posedge clk or negedge rst_n)begin
     if(rst_n==1'b0)begin
@@ -184,31 +189,4 @@ end
 endmodule
 
 
-
-/*
-parameter  IDLE    		=  4'd0,
-		   HEAD  		=  4'd1,
-		   TYPE_DATA  	=  4'd2,
-		   TYPE_CMD  	=  4'd3,
-		   DATA_LEN  	=  4'd4,
-		   DATA  		=  4'd5,
-		   DATA_CRC  	=  4'd6;
-		 		  
-
-virtual type {
-{4'd0 IDLE }
-{4'd1 HEAD }
-{4'd2 TYPE_DATA }
-{4'd3 TYPE_CMD }
-{4'd4 DATA_LEN }
-{4'd5 DATA }
-{4'd6 DATA_CRC }
-
-} SEG_DATA2;
-
-virtual function {(SEG_DATA2)/uut/current_state} c_state;
-
-add wave -hex -color pink c_state;
-
-*/
 
