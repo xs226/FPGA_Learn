@@ -3,136 +3,288 @@ K3
 13
 cModel Technology
 Z0 dF:\FPGA_TQ\FPGA_Learn\modelsim
-vfsm
-Z1 Ihk:?53ZE1bk3cSGZWZ1=m0
-Z2 V3bK:COj_M39GnJ?0Eh1`z0
+varray_key
+Z1 IObz_AR7S`NX]_Fe2<fSdE3
+Z2 VE7d<gIj4]V`PlMYFD8Wjg0
 Z3 dG:\FPGA_Learn\modelsim
-Z4 w1536138119
-Z5 8G:/FPGA_Learn/fsm/lesson5/fsm.v
-Z6 FG:/FPGA_Learn/fsm/lesson5/fsm.v
+Z4 w1537579268
+Z5 8G:/FPGA_Learn/project/arraykey/array_key.v
+Z6 FG:/FPGA_Learn/project/arraykey/array_key.v
 L0 1
 Z7 OV;L;10.1d;51
 r1
 31
-Z8 !s90 -reportprogress|300|-work|work|G:/FPGA_Learn/fsm/lesson5/fsm.v|
+Z8 !s90 -reportprogress|300|-work|work|G:/FPGA_Learn/project/arraykey/array_key.v|
 Z9 o-work work -O0
-Z10 !s100 geQl]Kn5;A5do?Kz9mSbM3
-Z11 !s108 1536138123.303000
-Z12 !s107 G:/FPGA_Learn/fsm/lesson5/fsm.v|
+Z10 !s100 ?[XezbVYmmY_7CIV_RV2S1
+Z11 !s108 1537579271.521000
+Z12 !s107 G:/FPGA_Learn/project/arraykey/array_key.v|
 !i10b 1
 !s85 0
 !s101 -O0
-vfsm_tb
-Z13 !s100 D_[@ad]Dgde3;Oej9AXno2
-Z14 I`MYjime978_eBB[1c:cSK2
-Z15 V[<j5d9CWFW=:dN1;^DJ@`3
+varray_key_tb
+Z13 !s100 DhK52IWS2oTP@XnW9Zc5U0
+Z14 I0FJVS47b5zAW[3652QXaM0
+Z15 VjNm9=F=U_c=XX]5zLo4Wm0
 R3
-Z16 w1536137436
-Z17 8G:/FPGA_Learn/fsm/lesson5/fsm_tb.v
-Z18 FG:/FPGA_Learn/fsm/lesson5/fsm_tb.v
+Z16 w1537578125
+Z17 8G:/FPGA_Learn/project/arraykey/array_key_tb.v
+Z18 FG:/FPGA_Learn/project/arraykey/array_key_tb.v
 L0 2
 R7
 r1
 31
-Z19 !s90 -reportprogress|300|-work|work|G:/FPGA_Learn/fsm/lesson5/fsm_tb.v|
+Z19 !s90 -reportprogress|300|-work|work|G:/FPGA_Learn/project/arraykey/array_key_tb.v|
 R9
+Z20 !s108 1537579271.712000
+Z21 !s107 G:/FPGA_Learn/project/arraykey/array_key_tb.v|
 !i10b 1
 !s85 0
-Z20 !s108 1536138123.522000
-Z21 !s107 G:/FPGA_Learn/fsm/lesson5/fsm_tb.v|
 !s101 -O0
-vpkt_check
-!i10b 1
-Z22 !s100 UW_giUS?]aAO7E]haoYhJ2
-Z23 I7RC_dA37SOh3jH>llbEal3
-Z24 V;bg<zPhn87E1^;H6BYbi=2
+vcounter
+Z22 !s100 hl>f`l`nUH2AP0^ol@8hI1
+Z23 IfFOJLZY0Bmd^YnI=0TW911
+Z24 VF=2k@>Kl[1MR6XnOZ1H[G0
 R3
-Z25 w1535093241
-Z26 8G:/FPGA_Learn/fsm/lesson5/pkt_check.v
-Z27 FG:/FPGA_Learn/fsm/lesson5/pkt_check.v
-Z28 L0 262
-R7
-r1
-!s85 0
-31
-!s108 1536138123.754000
-!s107 G:/FPGA_Learn/fsm/lesson5/pkt_check.v|
-Z29 !s90 -reportprogress|300|-work|work|G:/FPGA_Learn/fsm/lesson5/pkt_check.v|
-!s101 -O0
-R9
-vseg_led
-Z30 !s100 TaMZRC3g]flPNK>DefI502
-Z31 IiiXG1]@jR8FckmeFUAP9`2
-Z32 VO?U20TQlL6_TEYgVQN42j1
-Z33 dH:\FPGA_Learn\modelsim
-Z34 w1535713406
-Z35 8H:/FPGA_Learn/lesson7/timer.v
-Z36 FH:/FPGA_Learn/lesson7/timer.v
+Z25 w1538030391
+Z26 8G:/FPGA_Learn/project/arraykey/para_count.v
+Z27 FG:/FPGA_Learn/project/arraykey/para_count.v
 L0 1
 R7
 r1
 31
-Z37 !s90 -reportprogress|300|-work|work|H:/FPGA_Learn/lesson7/timer.v|
+Z28 !s90 -reportprogress|300|-work|work|G:/FPGA_Learn/project/arraykey/para_count.v|
 R9
-Z38 !s108 1535767790.167000
-Z39 !s107 H:/FPGA_Learn/lesson7/timer.v|
+!i10b 1
+!s85 0
+Z29 !s108 1538031255.054000
+Z30 !s107 G:/FPGA_Learn/project/arraykey/para_count.v|
+!s101 -O0
+vcounter_tb
+!i10b 1
+Z31 !s100 8;`;Khz[0@>@@<Pb9_ZzK0
+Z32 I5@j7CfSCC2Rn>TEV<?lO52
+Z33 Vj8omJUT`K`WQVcO`FDaH`3
+R3
+Z34 w1538031239
+Z35 8G:/FPGA_Learn/project/arraykey/para_count_tb.v
+Z36 FG:/FPGA_Learn/project/arraykey/para_count_tb.v
+L0 2
+R7
+r1
+!s85 0
+31
+!s108 1538031255.304000
+!s107 G:/FPGA_Learn/project/arraykey/para_count_tb.v|
+Z37 !s90 -reportprogress|300|-work|work|G:/FPGA_Learn/project/arraykey/para_count_tb.v|
+!s101 -O0
+R9
+vfsm
+Z38 !s100 FmPaMojW8iS;;AfS8HKe80
+Z39 ISSBm2UHM6Aj1Tk:Wg_ElI2
+Z40 V2^F6<R_oad6GCi?01a;IN3
+R3
+Z41 w1536201616
+Z42 8G:/FPGA_Learn/fsm/lesson5/fsm.v
+Z43 FG:/FPGA_Learn/fsm/lesson5/fsm.v
+L0 1
+R7
+r1
+31
+Z44 !s90 -reportprogress|300|-work|work|G:/FPGA_Learn/fsm/lesson5/fsm.v|
+R9
+Z45 !s108 1536202460.005000
+Z46 !s107 G:/FPGA_Learn/fsm/lesson5/fsm.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vfsm_tb
+Z47 !s100 D_[@ad]Dgde3;Oej9AXno2
+Z48 I`MYjime978_eBB[1c:cSK2
+Z49 V[<j5d9CWFW=:dN1;^DJ@`3
+R3
+Z50 w1536137436
+Z51 8G:/FPGA_Learn/fsm/lesson5/fsm_tb.v
+Z52 FG:/FPGA_Learn/fsm/lesson5/fsm_tb.v
+L0 2
+R7
+r1
+31
+Z53 !s90 -reportprogress|300|-work|work|G:/FPGA_Learn/fsm/lesson5/fsm_tb.v|
+R9
+Z54 !s108 1536202460.236000
+Z55 !s107 G:/FPGA_Learn/fsm/lesson5/fsm_tb.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vhex2dec
+Z56 !s100 ?PMnBkcTbjj=;?I<3`eI43
+Z57 I>hDSnPJdl@7j3W7:P@4R82
+Z58 VS_jceli6h3I8e:bn:_UFl1
+R3
+Z59 w1537945472
+Z60 8G:/FPGA_Learn/project/arraykey/hex2dec.v
+Z61 FG:/FPGA_Learn/project/arraykey/hex2dec.v
+L0 1
+R7
+r1
+31
+Z62 !s90 -reportprogress|300|-work|work|G:/FPGA_Learn/project/arraykey/hex2dec.v|
+R9
+Z63 !s108 1537945550.354000
+Z64 !s107 G:/FPGA_Learn/project/arraykey/hex2dec.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vhex2dec_tb
+Z65 Ima]=G7SH52e1DdDUcfCOC1
+Z66 V>fg<BNY?oeeIfcSTGiaJa0
+R3
+Z67 w1537945547
+Z68 8G:/FPGA_Learn/project/arraykey/hex2dec_tb.v
+Z69 FG:/FPGA_Learn/project/arraykey/hex2dec_tb.v
+L0 2
+R7
+r1
+31
+Z70 !s90 -reportprogress|300|-work|work|G:/FPGA_Learn/project/arraykey/hex2dec_tb.v|
+R9
+Z71 !s100 dmZa0G0o=G<hg8A]k29Bk2
+Z72 !s108 1537945550.564000
+Z73 !s107 G:/FPGA_Learn/project/arraykey/hex2dec_tb.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vpara_seg_display
+Z74 !s100 gGh5S]hL;YIgY9cRe5MLG3
+Z75 IGhloN8GL^4][9m08X@3I`3
+Z76 VD8IFo2Bi9Ml7;b_OdNKQ@2
+R3
+Z77 w1537863200
+Z78 8G:/FPGA_Learn/project/arraykey/para_seg_display.v
+Z79 FG:/FPGA_Learn/project/arraykey/para_seg_display.v
+L0 1
+R7
+r1
+31
+Z80 !s90 -reportprogress|300|-work|work|G:/FPGA_Learn/project/arraykey/para_seg_display.v|
+R9
+Z81 !s108 1537865534.632000
+Z82 !s107 G:/FPGA_Learn/project/arraykey/para_seg_display.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vpara_seg_display_tb
+Z83 ImEZJDk86kSIh[L=?h1QDG2
+Z84 VJll5BD1Ti^g@fI:>Uf<D>2
+R3
+Z85 w1537865530
+Z86 8G:/FPGA_Learn/project/arraykey/para_seg_display_tb.v
+Z87 FG:/FPGA_Learn/project/arraykey/para_seg_display_tb.v
+L0 2
+R7
+r1
+31
+Z88 !s90 -reportprogress|300|-work|work|G:/FPGA_Learn/project/arraykey/para_seg_display_tb.v|
+R9
+Z89 !s100 Ch_<:Pm7YROaodIMFeW_G0
+Z90 !s108 1537865534.822000
+Z91 !s107 G:/FPGA_Learn/project/arraykey/para_seg_display_tb.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vpkt_check
+Z92 I@lYgV;g^X<Yeai12N7NlS2
+Z93 V;bg<zPhn87E1^;H6BYbi=2
+R3
+Z94 w1536202454
+Z95 8G:/FPGA_Learn/fsm/lesson5/pkt_check.v
+Z96 FG:/FPGA_Learn/fsm/lesson5/pkt_check.v
+L0 5
+R7
+r1
+31
+Z97 !s90 -reportprogress|300|-work|work|G:/FPGA_Learn/fsm/lesson5/pkt_check.v|
+R9
+Z98 !s100 OhaB^EcnaoQ2=lI<CCdOG2
+Z99 !s108 1536202460.455000
+Z100 !s107 G:/FPGA_Learn/fsm/lesson5/pkt_check.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vseg_led
+Z101 !s100 TaMZRC3g]flPNK>DefI502
+Z102 IiiXG1]@jR8FckmeFUAP9`2
+Z103 VO?U20TQlL6_TEYgVQN42j1
+Z104 dH:\FPGA_Learn\modelsim
+Z105 w1535713406
+Z106 8H:/FPGA_Learn/lesson7/timer.v
+Z107 FH:/FPGA_Learn/lesson7/timer.v
+L0 1
+R7
+r1
+31
+Z108 !s90 -reportprogress|300|-work|work|H:/FPGA_Learn/lesson7/timer.v|
+R9
+Z109 !s108 1535767790.167000
+Z110 !s107 H:/FPGA_Learn/lesson7/timer.v|
 !i10b 1
 !s85 0
 !s101 -O0
 vseg_led_tb
-Z40 Immd;nn9m[ziJVA=eG^IDa0
-Z41 VUc;Ybo6UHNAOEoBe2dkVJ3
-R33
-Z42 w1535767786
-Z43 8H:\FPGA_Learn\lesson7\timer_tb.v
-Z44 FH:\FPGA_Learn\lesson7\timer_tb.v
+Z111 Immd;nn9m[ziJVA=eG^IDa0
+Z112 VUc;Ybo6UHNAOEoBe2dkVJ3
+R104
+Z113 w1535767786
+Z114 8H:\FPGA_Learn\lesson7\timer_tb.v
+Z115 FH:\FPGA_Learn\lesson7\timer_tb.v
 L0 2
 R7
 r1
 31
 R9
-Z45 !s100 8Nz@JQ[ef><i9gd_A]@PO0
-Z46 !s108 1535767790.394000
-Z47 !s107 H:\FPGA_Learn\lesson7\timer_tb.v|
-Z48 !s90 -reportprogress|300|-work|work|H:\FPGA_Learn\lesson7\timer_tb.v|
+Z116 !s100 8Nz@JQ[ef><i9gd_A]@PO0
+Z117 !s108 1535767790.394000
+Z118 !s107 H:\FPGA_Learn\lesson7\timer_tb.v|
+Z119 !s90 -reportprogress|300|-work|work|H:\FPGA_Learn\lesson7\timer_tb.v|
 !i10b 1
 !s85 0
 !s101 -O0
 vtestbench_tb
-Z49 !s100 `kC6]9CWmB=U?4nH_nL0?1
-Z50 Iz=51XTG4[;<?QDgiOKZid1
-Z51 VO?A^REM6<e1OYnP;XBgVf0
-R33
-Z52 w1535853931
-Z53 8H:/FPGA_Learn/fsm/lesson1/fsm_tb.v
-Z54 FH:/FPGA_Learn/fsm/lesson1/fsm_tb.v
+Z120 !s100 9X;?<DW>_dzcVXbL>aH1K1
+Z121 IfZ6WnX=d0F6TiBNgF85@@3
+Z122 VO?A^REM6<e1OYnP;XBgVf0
+R3
+Z123 w1538031199
+R35
+R36
 L0 2
 R7
 r1
 31
-Z55 !s90 -reportprogress|300|-work|work|H:/FPGA_Learn/fsm/lesson1/fsm_tb.v|
+R37
 R9
-Z56 !s108 1535854036.797000
-Z57 !s107 H:/FPGA_Learn/fsm/lesson1/fsm_tb.v|
+Z124 !s108 1538031219.347000
+Z125 !s107 G:/FPGA_Learn/project/arraykey/para_count_tb.v|
 !i10b 1
 !s85 0
 !s101 -O0
 vtraffic_led_tb
-Z58 !s100 `f_GJll<B2eca6LQZM^Zn3
-Z59 IYY5c<;CAb1?BSTHTRh6193
-Z60 VBn]oB;fgIdT4Fo4clk5W_1
+Z126 !s100 `f_GJll<B2eca6LQZM^Zn3
+Z127 IYY5c<;CAb1?BSTHTRh6193
+Z128 VBn]oB;fgIdT4Fo4clk5W_1
 R3
-Z61 w1535512889
-Z62 8G:/FPGA_Learn/lesson4/seg_led_tb.v
-Z63 FG:/FPGA_Learn/lesson4/seg_led_tb.v
+Z129 w1535512889
+Z130 8G:/FPGA_Learn/lesson4/seg_led_tb.v
+Z131 FG:/FPGA_Learn/lesson4/seg_led_tb.v
 L0 2
 R7
 r1
 31
-Z64 !s90 -reportprogress|300|-work|work|G:/FPGA_Learn/lesson4/seg_led_tb.v|
+Z132 !s90 -reportprogress|300|-work|work|G:/FPGA_Learn/lesson4/seg_led_tb.v|
 R9
-Z65 !s108 1535513119.406000
-Z66 !s107 G:/FPGA_Learn/lesson4/seg_led_tb.v|
+Z133 !s108 1535513119.406000
+Z134 !s107 G:/FPGA_Learn/lesson4/seg_led_tb.v|
 !i10b 1
 !s85 0
 !s101 -O0

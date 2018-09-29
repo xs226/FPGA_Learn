@@ -30,7 +30,6 @@ parameter  HEAD  	=  4'd0,
 reg[3:0] current_state;
 reg[3:0] next_state;
 
-
 /************************freme_head_flag信号****************************/
 reg[7:0] din_ff0;
 reg[3:0] cnt_head ;
@@ -55,61 +54,57 @@ always@(posedge clk or negedge rst_n)begin
 	else cnt_head<=0;
 end
 
-/************************* rec_len_cnt *****************************/
-reg[2:0] rec_len_cnt ;
-reg[15:0] data_len;
-
+/************************* cnt_len *****************************/
+reg cnt_len ;
 always @(posedge clk or negedge rst_n)begin
     if(!rst_n)begin
-        rec_len_cnt <= 0;
+        cnt_len <= 0;
     end
-    else if( current_state==TYPE_DATA ) begin
-        if(rec_len_cnt==1) rec_len_cnt<= 0;
-        else rec_len_cnt <= rec_len_cnt + 1;
+    else if( current_state==LEN ) begin
+        cnt_len<= ~cnt_len;
     end
-	else rec_len_cnt<= 0;
+	else cnt_len<= 0;
 end
 
+/************************* CNT_THD *****************************/
+reg[15:0] cnt_thd;
 always@(posedge clk or negedge rst_n)begin
     if(rst_n==1'b0)begin
-        data_len<=0;
+        cnt_thd<=0;
     end
-    else if( current_state==TYPE_DATA) begin
-        data_len<={data_len[7:0],din};
+    else if(current_state==TYPE&&din==0) begin
+        cnt_thd<=64;
     end
+	else if(current_state==LEN) begin
+		cnt_thd<={cnt_thd[7:0],din};
+	end
+	//else cnt_thd<=0;
 end
 
 /*************************cnt_data**************************/
-
-reg[5:0] cnt_data;
-
+reg[15:0] cnt_data;
 always @(posedge clk or negedge rst_n)begin
     if(!rst_n)begin
         cnt_data <= 0;
     end
-    else if( current_state==TYPE_CMD ) begin
-        if(  cnt_data==63) cnt_data <= 0;
+    else if( current_state==DATA )begin
+        if(  cnt_data==cnt_thd-1) cnt_data <= 0;
         else cnt_data <= cnt_data + 1;
-    end
-	else if( current_state==DATA_LEN ) begin
-        if(  cnt_data==data_len-1) cnt_data <= 0;
-        else cnt_data <= cnt_data + 1;
-    end
-	else if( current_state==DATA ) begin
-        if(  cnt_data==3) cnt_data <= 0;
-        else cnt_data <= cnt_data + 1;
-    end
-	else cnt_data <= 0;
-	
+    end		
 end
 
-
-
-
-
-
-
-
+/************************* cnt_fcs *****************************/
+reg[1:0] cnt_fcs;
+always@(posedge clk or negedge rst_n)begin
+    if(rst_n==1'b0)begin
+        cnt_fcs<=0;
+    end
+    else if( current_state==FCS )begin
+        if( cnt_fcs==3 ) cnt_fcs<=0;
+		else cnt_fcs<=cnt_fcs+1;
+    end
+	else  cnt_fcs<=0;
+end
 
 /************************* fsm *****************************/
 
@@ -128,60 +123,56 @@ always@(*)begin
 			 else next_state=current_state ;		
 		TYPE: if(din==0) next_state=DATA ;
 			  else next_state=LEN ;
-		LEN: if( cnt_data==CNT_THD-1 ) next_state=DATA ;
+		LEN: if( cnt_len==1 ) next_state=DATA ;
 			    else next_state=current_state;
-		DATA: if( cnt_data==CNT_THD-1 ) next_state=FCS ;
+		DATA: if( cnt_data==cnt_thd-1 ) next_state=FCS ;
 				else next_state=current_state;
-		FCS: if( cnt_data==CNT_THD-1 ) next_state=HEAD;
+		FCS: if( cnt_fcs==3 ) next_state=HEAD;
 				else next_state=current_state;
 	    default:next_state=HEAD;
 	endcase
 end
 
-
-
-
-
-
-
+/************************* dout *****************************/
 always@(posedge clk or negedge rst_n)begin
     if(rst_n==1'b0)begin
         dout<=0;
     end
-    else if(current_state!=IDLE ) begin
+    else begin
         dout<=din;
     end
 end
+/************************* dout_sop *****************************/
 always@(posedge clk or negedge rst_n)begin
     if(rst_n==1'b0)begin
         dout_sop<=0;
     end
-    else if(current_state==HEAD) begin
+    else if(current_state==TYPE) begin
         dout_sop<=1;
     end
 	else begin
         dout_sop<=0;
     end
 end
-
+/************************* dout_eop *****************************/
 always@(posedge clk or negedge rst_n)begin
     if(rst_n==1'b0)begin
        dout_eop<=0; 
     end
-    else if(current_state==DATA && cnt_data==2 ) begin
+    else if(current_state==FCS && cnt_fcs==3 ) begin
 		dout_eop<=1; 
     end
 	else dout_eop<=0; 
 end
-
+/************************* dout_vld *****************************/
 always@(posedge clk or negedge rst_n)begin
     if(rst_n==1'b0)begin
 		dout_vld<=0; 
     end
-    else if(current_state==HEAD) begin
+    else if(current_state==TYPE) begin
 		dout_vld<=1; 
     end
-	else if(current_state==DATA_CRC && cnt_data==3 ) begin
+	else if(current_state==FCS && cnt_fcs==3 ) begin
 		dout_vld<=0; 
     end
 end
